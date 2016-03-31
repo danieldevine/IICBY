@@ -1,0 +1,265 @@
+@media (max-width: #{$tablet-width - 1px}) {
+
+@mixin grid-setup($number: $column-number) {
+  // Assign percentage-based widths for columns
+  @for $i from 1 through $number {
+    .#{$column-prefix + $i} { width: 100% / $number * $i; }
+  }
+
+  @for $i from 1 through $number {
+    // Style all but the last column
+      $width-of-a-column: ( 100% - $gutters * ($number - 1) ) / $number;
+      .gutters .#{$column-prefix + $i} { width: $width-of-a-column * $i + $gutters * ($i - 1);
+        content: $gutters * ($i - 1);
+      }
+
+  }
+}
+
+@include grid-setup();
+
+
+//
+// Proper vendor prefixes are created just by
+// passing a property value and size value.
+//
+//    `@include vendor(border-radius, 4px);`
+//
+//
+@mixin vendor($property, $value...) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+
+//------------------------------------//
+//  $GRID
+//------------------------------------//
+.grid-example [class*='column-'] {
+  border: 1px dashed #bbb;
+  padding: 20px 0;
+}
+
+.row {
+  margin-bottom: 24px;
+  width: 100%;
+
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+//  /* first element in row we dont want extra spacing  on top */
+//   p:first-child,
+//   h1:first-child,
+//   h2:first-child,
+//   h3:first-child,
+//   h4:first-child,
+//   h5:first-child,
+//   h6:first-child{
+//    margin-top: 0;
+//    padding-top: 0;
+//  }
+//
+//  /* last element in row we dont want extra spacing on bottom , but not if the only one*/
+//   p:last-child:not(:first-child),
+//   h1:last-child:not(:first-child),
+//   h2:last-child:not(:first-child),
+//   h3:last-child:not(:first-child),
+//   h4:last-child:not(:first-child),
+//   h5:last-child:not(:first-child),
+//   h6:last-child:not(:first-child){
+//    margin-bottom: 0;
+//    padding-bottom: 0;
+//  }
+
+
+}
+
+[class*='#{$column-prefix}'] {
+  @include vendor(background-clip, padding-box !important);
+
+  &.right { float: right; }
+
+  img { max-width: 100%; }
+}
+[class*='#{$column-prefix}'] { float: left; }
+
+.gutters [class*='#{$column-prefix}'] {
+  margin-left: 0;
+
+  &:first-child { margin-left: 0; }
+}
+
+  }
+
+
+/*=================TABLET=======================*/
+
+@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+/* no margin left for full width tablet grids */
+.#{$md-column-prefix}#{$column-number} {
+  margin-left: 0!important;
+}
+
+
+@mixin grid-setup($number: $column-number) {
+  // Assign percentage-based widths for columns
+  @for $i from 1 through $number {
+    .#{$md-column-prefix + $i} { width: 100% / $number * $i; }
+  }
+
+  @for $i from 1 through $number {
+    // Style all but the last column
+      $width-of-a-column: ( 100% - $gutters * ($number - 1) ) / $number;
+      .gutters .#{$md-column-prefix + $i} { width: $width-of-a-column * $i + $gutters * ($i - 1);
+        content: $gutters * ($i - 1);
+      }
+  }
+}
+
+@include grid-setup();
+
+
+//
+// Proper vendor prefixes are created just by
+// passing a property value and size value.
+//
+//    `@include vendor(border-radius, 4px);`
+//
+//
+@mixin vendor($property, $value...) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+
+//------------------------------------//
+//  $GRID
+//------------------------------------//
+
+.row {
+  margin-bottom: 24px;
+  width: 100%;
+
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+[class*='#{$md-column-prefix}'] {
+  @include vendor(background-clip, padding-box !important);
+
+  &.right { float: right; }
+
+  img { max-width: 100%; }
+}
+[class*='#{$md-column-prefix}'] { float: left; }
+
+.gutters [class*='#{$md-column-prefix}'] {
+  margin-left: $gutters;
+
+  &:first-child { margin-left: 0; }
+
+  &.md-col-6:nth-child(odd)  {
+      margin-left: 0;
+  }
+}
+
+
+
+ }
+
+
+/*=================DESKTOP======================*/
+@media screen and (min-width: $desktop-width){
+
+@mixin grid-setup($number: $column-number) {
+  // Assign percentage-based widths for columns
+  @for $i from 1 through $number {
+    .#{$lg-column-prefix + $i} { width: 100% / $number * $i; }
+  }
+
+  @for $i from 1 through $number {
+    // Style all but the last column
+      $width-of-a-column: ( 100% - $gutters * ($number - 1) ) / $number;
+      .gutters .#{$lg-column-prefix + $i} { width: $width-of-a-column * $i + $gutters * ($i - 1);
+        content: $gutters * ($i - 1);
+      }
+
+  }
+}
+
+@include grid-setup();
+
+
+//
+// Proper vendor prefixes are created just by
+// passing a property value and size value.
+//
+//    `@include vendor(border-radius, 4px);`
+//
+//
+@mixin vendor($property, $value...) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+
+//------------------------------------//
+//  $GRID
+//------------------------------------//
+
+.row {
+  margin-bottom: 24px;
+  width: 100%;
+
+  &:after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+[class*='#{$lg-column-prefix}'] {
+  @include vendor(background-clip, padding-box !important);
+
+  &.right { float: right; }
+
+  img { max-width: 100%; }
+}
+[class*='#{$lg-column-prefix}'] { float: left; }
+
+.gutters [class*='#{$lg-column-prefix}'] {
+  margin-left: $gutters;
+
+  &:first-child { margin-left: 0; }
+
+
+}
+
+  }

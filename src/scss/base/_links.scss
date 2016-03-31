@@ -1,0 +1,37 @@
+/*
+ * -- LINKS STYLES --
+ * Style links here
+ */
+
+.read-more {
+    font-size: 1em;
+    color: $secondaryColour;
+
+
+    &:hover {
+        text-decoration: underline;;
+        color: $primaryColour;
+
+
+    }
+}
+
+.hover-light {
+    &:hover {
+        opacity: .8;
+    }
+}
+
+.hover-pulse {
+    &:hover {
+        @extend .animated;
+        @extend .pulse;
+    }
+}
+
+.hover-hop {
+    &:hover {
+        @extend .animated;
+        @extend .hop;
+    }
+}

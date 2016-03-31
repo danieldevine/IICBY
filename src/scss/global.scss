@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*! Maverick */
+/*------------------------------------*\
+   global.css
+\*------------------------------------*/
+
+//base
+@import "base/settings";
+@import "base/mixins";
+@import "base/base";
+@import "base/grid";
+@import "base/normalize";
+
+
+//vendors
+@import "vendors/animations";
+
+
+//helpers
+@import "helpers/helpers";
+
+
+//layout
+@import "layout/navigation";
+@import "layout/sections"

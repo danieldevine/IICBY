@@ -1,0 +1,90 @@
+//center anything @include middler
+@mixin middler {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//the clearfix hack @include clearfix()
+@mixin clearfix() {
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+//gradients @include primary-secondary
+@mixin primary-secondary {
+    background: $secondaryColour; /* Old browsers */
+    background: linear-gradient(45deg, $primaryColour 50%, $secondaryColour 50%);
+}
+
+
+/* Arrow mixin - add arrow to sides of elements for example */
+
+@mixin arrow($direction: top, $size: 10px, $color: #ccc, $center: 50%, $margin: -1px, $pseudo: before){
+    position: relative;
+    border-color: $color;
+
+    &:#{$pseudo} {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        border-color: $color;
+
+        @if $direction == "right" {
+            top: $center;
+            left: 100%;
+            margin-left: $margin;
+            margin-top: $size * -1;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+            border-left: $size solid $color;
+            border-left-color: inherit;
+        } @else if $direction == "down" {
+            top: 100%;
+            left: $center;
+            margin-top: $margin;
+            margin-left: $size * -1;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            border-top: $size solid $color;
+            border-top-color: inherit;
+        } @else if $direction == "left" {
+            top: $center;
+            right: 100%;
+            margin-right: $margin;
+            margin-top: $size * -1;
+            border-top: $size solid transparent;
+            border-bottom: $size solid transparent;
+            border-right:$size solid $color;
+            border-right-color: inherit;
+        } @else {
+            bottom: 100%;
+            left: $center;
+            margin-bottom: $margin;
+            margin-left: $size * -1;
+            border-left: $size solid transparent;
+            border-right: $size solid transparent;
+            border-bottom: $size solid $color;
+            border-bottom-color: inherit;
+        }
+    }
+}
+
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  display: inline-block;
+  -webkit-border-radius: $width/2;
+  -moz-border-radius: $width/2;
+  border-radius: $width/2;
+}

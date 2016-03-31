@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+/*
+ * -- BASE STYLES --
+ *
+ */
+
+html {
+    background: $quaternaryColour;
+
+    @include tablet {
+        background: pink;
+    }
+    @include mobile {
+        background: yellow;
+    }
+}
+
+body {
+    font-family: $futura;
+    line-height: 1.7;
+
+    max-width: 100%;
+    height: 100% !important;
+    margin: 0 auto;
+
+    color: $primaryFontColour;
+    background: #333333;
+
+    overflow-x: hidden;
+
+    @include base-fontsize;
+}
+
+a {
+    -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+    text-decoration: none;
+
+    color: inherit;
+    outline: 0 !important;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p {
+    font-size: 1rem;
+    line-height: normal;
+    line-height: 1.5;
+
+    color: $primaryFontColour;
+}
+
+ul {
+    li {
+        padding: 0 0 1em .5em;
+    }
+}
+
+.wrapper {
+    max-width: $maxWrapperWidth;
+    min-height: 100%;
+    margin: auto;
+
+    @include tablet-and-mobile {
+        max-width: 90%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    &:after {
+      clear: both;
+      content: " ";
+      display: table;
+    }
+}
+
+.clear{
+  clear: both;
+}

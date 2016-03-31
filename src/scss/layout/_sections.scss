@@ -1,0 +1,11 @@
+/*
+ * -- SECTION AND BLOCK STYLES --
+ */
+
+section {
+    &:after {
+        display: table;
+        clear: both;
+        content: ' ';
+    }
+}

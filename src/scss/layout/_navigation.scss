@@ -1,0 +1,185 @@
+.nav--main-menu {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: $headerHeight;
+    margin-top: -$headerHeight;
+    background-color: $quaternaryColour;
+    z-index: 56;
+}
+
+.nav--wrapper {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: $headerHeight;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: ' ';
+    }
+}
+
+.logo {
+    display: inline-block;
+    margin-top: 25px;
+    float: left;
+
+    img {
+        width: 152px;
+        height: 53px;
+    }
+}
+.meta-holder {
+    float: right;
+}
+.nav--meta {
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 0.813rem;
+    color: #704e5a;
+    font-weight: 700;
+    position: relative;
+    z-index: 20;
+    transition: .5s ease all;
+
+    li {
+        list-style: none;
+        display: inline;
+        padding: 0;
+    }
+
+    li.menu {
+        padding-right: 10px;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    a {
+        margin-right: 12px;
+
+        &:hover {
+            text-decoration: none;
+            color: $secondaryColour;
+        }
+    }
+}
+
+.menu-visible {
+    li.menu {
+        color: $quaternaryColour;
+    }
+
+    a.btn--download-brochure {
+        background: #333;
+        border: 1px solid $tertiaryColour;
+        color: $quaternaryColour;
+
+        &:hover {
+            background: $tertiaryColour;
+            color: $quaternaryColour;
+        }
+    }
+}
+
+#prime {
+    z-index: -1;
+}
+
+.nav--top-main {
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 144px;
+    right: 125px;
+    z-index: 20;
+    transition: .5s ease all;
+
+    li {
+        list-style: none;
+        color: $quaternaryColour;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.55rem ;
+    }
+
+    .current-menu-item {
+        a {
+            text-decoration: none;
+            color: $tertiaryColour !important;
+        }
+    }
+}
+
+.btn--download-brochure {
+    padding: .7em 1em;
+    background: $secondaryColour;
+    border: 1px solid $secondaryColour;
+    color: $quaternaryColour;
+    transition: .25s ease all;
+    font-size: 0.813rem;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+        background: $quaternaryColour;
+        color: $secondaryColour;
+        transition: .25s ease all;
+    }
+}
+
+.down-arrow, .icon-icon-login {
+    color: $primaryColour;
+    font-size: 1.5em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.how-it-works__nav {
+    background: $primaryColour;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 70%;
+    height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -50px;
+    left: 15%;
+
+    a {
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 35px;
+
+        &:not(:last-of-type) {
+            position: relative;
+
+            &:after {
+                content: " ";
+                position: absolute;
+                margin: auto;
+                top: 14px;
+                left: 0;
+                right: -200px;
+                width: 70px;
+                height: 70px;
+                        transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+                   -moz-transform: rotate(-45deg);
+                     -o-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+}
