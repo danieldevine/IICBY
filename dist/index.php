@@ -14,7 +14,10 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <link rel="stylesheet" href="/css/global.css">
+     <link rel="stylesheet" href="/css/global.min.css">
+
+     <script src="https://use.typekit.net/jar3opr.js"></script>
+     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 </head>
 
@@ -28,11 +31,11 @@
 
          ?>
 
-        <section class="queston">
+        <section class="question">
 
             <h5><?php echo date(" jS F "); ?></h5>
 
-            <h1>Is it Con's Birthday Today?</h1>
+            <h1 class="animated bounceIn">Is it Con's Birthday Today?</h1>
 
         </section>
 
@@ -51,17 +54,7 @@
 
         <?php endif ?>
 
-            <script>
-              //asynchronously load typekit fonts
-              (function(d) {
-                var config = {
-                  kitId: 'jar3opr',
-                  scriptTimeout: 3000,
-                  async: true
-                },
-                h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-              })(document);
-            </script>
+            <script src="/js/production.min.js"></script>
 
     </body>
 </html>

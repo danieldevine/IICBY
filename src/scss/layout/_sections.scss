@@ -3,9 +3,12 @@
  */
 
 section {
-    &:after {
-        display: table;
-        clear: both;
-        content: ' ';
-    }
+    @include clearfix();
+}
+
+.question {
+    height:  80vh;
+    padding: 20em;
+    background:pink;
+
 }

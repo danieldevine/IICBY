@@ -23,7 +23,7 @@ body {
     line-height: 1.7;
 
     max-width: 100%;
-    height: 100% !important;
+    height: 100%;
     margin: 0 auto;
 
     color: $primaryFontColour;
@@ -35,10 +35,9 @@ body {
 }
 
 a {
-    -webkit-transition: all .3s ease;
-            transition: all .3s ease;
-    text-decoration: none;
 
+    transition: all .3s ease;
+    text-decoration: none;
     color: inherit;
     outline: 0 !important;
 
@@ -50,8 +49,6 @@ a {
 p {
     font-size: 1rem;
     line-height: normal;
-    line-height: 1.5;
-
     color: $primaryFontColour;
 }
 
@@ -64,7 +61,7 @@ ul {
 .wrapper {
     max-width: $maxWrapperWidth;
     min-height: 100%;
-    margin: auto;
+    margin: 0 auto;
 
     @include tablet-and-mobile {
         max-width: 90%;
@@ -79,8 +76,4 @@ ul {
       content: " ";
       display: table;
     }
-}
-
-.clear{
-  clear: both;
 }
