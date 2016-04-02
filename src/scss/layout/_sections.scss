@@ -13,7 +13,8 @@ section {
 .question {
     height:  100vh;
     padding: 20em 0;
-    background:pink;
+    background:#FFC107;
+    color: #000;
     text-align: center;
     margin: 0 auto;
     position: relative;
@@ -22,26 +23,51 @@ section {
 
     h1 {
         font-size: 9vw;
-        line-height: normal;
+        line-height: 0.8;
         margin: 0;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-delay: 1s;
     }
 
     h5 {
         margin: 0;
         font-size: 2rem;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-delay: 1s;
     }
+
+
 
 }
 
 .answer {
     @extend .question;
-    background: #333;
+    background: #000;
+
+
+
+
 
     h1 {
-        color: #ffffff;
-        font-size: 10vw;
+        color: #FFC107;
+        font-size: 14vw;
         margin: 0;
+        -webkit-animation-duration: 2s;
+        -webkit-animation-delay: 4s;
+    }
+
+    .wait {
+        -webkit-animation-duration: 3s;
+        -webkit-animation-delay: 3s;
+
     }
 
 
+}
+
+img.crem {
+    position: absolute;
+    bottom: 0;
+    right: 15vw;
+    -webkit-animation-delay: 5s;
 }
