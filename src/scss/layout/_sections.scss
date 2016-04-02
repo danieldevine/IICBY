@@ -1,14 +1,47 @@
 /*
  * -- SECTION AND BLOCK STYLES --
  */
-
 section {
     @include clearfix();
 }
 
+.inner {
+    @include middler;
+}
+
+
 .question {
-    height:  80vh;
-    padding: 20em;
+    height:  100vh;
+    padding: 20em 0;
     background:pink;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+
+    h1 {
+        font-size: 9vw;
+        line-height: normal;
+        margin: 0;
+    }
+
+    h5 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+}
+
+.answer {
+    @extend .question;
+    background: #333;
+
+    h1 {
+        color: #ffffff;
+        font-size: 10vw;
+        margin: 0;
+    }
+
 
 }

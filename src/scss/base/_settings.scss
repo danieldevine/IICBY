@@ -76,6 +76,5 @@ $lg-column-prefix: 'lg-col-' !default;
     font-size: 16px;
 }
 
-
-$cond: 'futura-pt-condensed';
-$futura: 'futura-pt';
+@import url(https://fonts.googleapis.com/css?family=Passion+One:900,700,400);
+$font: 'Passion One', cursive;

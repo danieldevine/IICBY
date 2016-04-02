@@ -16,8 +16,7 @@
 
      <link rel="stylesheet" href="/css/global.min.css">
 
-     <script src="https://use.typekit.net/jar3opr.js"></script>
-     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 
 </head>
 
@@ -31,26 +30,45 @@
 
          ?>
 
-        <section class="question">
+    <div class="row">
 
-            <h5><?php echo date(" jS F "); ?></h5>
+        <div class="col-12 md-col-12 lg-col-6">
 
-            <h1 class="animated bounceIn">Is it Con's Birthday Today?</h1>
+            <section class="question">
 
-        </section>
+                <div class="inner">
+                    <h5><?php echo date(" jS F "); ?></h5>
+
+                    <h1 class="animated bounce">Is it Con's Birthday Today?</h1>
+                </div>
+
+            </section>
+
+        </div>
 
 
-        <section class="answer">
+        <div class="col-12 md-col-12 lg-col-6">
 
-            <?php if ($date === $bingo): ?>
+            <section class="answer">
 
-                <h2 class="no">NO</h2>
+                <div class="inner">
+                    <?php if ($date === $bingo): ?>
 
-            <?php else: ?>
+                        <h1 class="no animated slideInRight">NO,</h1>
 
-                <h2 class="yes">YES</h2>
+                        <h1 class="no animated slideInRight">Sorry.</h1>
 
-        </section>
+                    <?php else: ?>
+
+                        <h1 class="yes animated slideInRight">YES</h1>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
 
         <?php endif ?>
 
