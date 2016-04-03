@@ -43,13 +43,13 @@
                         <?php else: ?>
                             <h1 class="yes animated bounceInRight">YES</h1>
                     </div>
-                    <img src="/img/ccrem.png" alt="its con's birthday, hurray"  title="its Con's Birthday. Hurray!" class="crem animated slideInUp tada"/>
+                    <img src="/img/ccrem.jpg" alt="its con's birthday, hurray"  title="its Con's Birthday. Hurray!" class="crem animated slideInUp tada"/>
             </section>
         </div>
 
     </div>
 
-        <?php endif ?>    
+        <?php endif ?>
         <script src="/js/production.min.js"></script>
     </body>
 </html>
